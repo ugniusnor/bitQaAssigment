@@ -1,0 +1,21 @@
+{
+    "name": "ugnius/php-unit-practical",
+    "description":" aaa",
+    "authors": [
+        {
+            "name": "ugniusnor",
+            "email": "ugnn97@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app",
+            "Controller\\": "app\\controllers",
+            "Repository\\": "app\\repositories",
+            "Model\\": "app\\models"
+        }
+    },
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
