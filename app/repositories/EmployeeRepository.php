@@ -44,13 +44,7 @@ class EmployeeRepository
         mysqli_close($this->conn);
         return $employees;
     }
-    public function getAllWithCount()
-    {
-        $employees = $this->getAll();
-        $count = count($employees);
-        $employees[] = (object) ['count' => $count];
-        return $employees;
-    }
+
     public function getById()
     {
     }

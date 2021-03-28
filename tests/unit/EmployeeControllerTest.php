@@ -46,15 +46,14 @@ class EmployeeContollerTest extends TestCase
     //stubing getAllJsonWIthCount
     public function testGetAllJsonReturnsJsonWithCount()
     {
-        // $repo = new EmployeeRepository();
-        // print_r((new EmployeeController($repo))->getAllWithCount());
+        $repo = new EmployeeRepository();
+        print_r((new EmployeeController($repo))->getAllWithCount());
 
 
         $stub = $this->createStub(EmployeeRepository::class);
-        $stub->method('getAllWithCount')->willReturn(array(
+        $stub->method('getAll')->willReturn(array(
             new Employee(1, "Jonas"),
             new Employee(2, "Petras"),
-            (object) ['count' => 2]
         ));
         $employeeController = new EmployeeController($stub);
         $res = $employeeController->getAllWithCount();

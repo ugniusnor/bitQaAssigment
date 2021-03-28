@@ -23,6 +23,9 @@ class EmployeeController
     }
     public function getAllWithCount()
     {
-        return json_encode($this->employeeRepository->getAllWithCount());
+        $employeeArr = $this->employeeRepository->getAll();
+        $count = count($employeeArr);
+        $employeeArr[] = (object) ['count' => $count];
+        return json_encode($employeeArr);
     }
 }
