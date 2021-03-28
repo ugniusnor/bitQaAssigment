@@ -45,9 +45,20 @@ class EmployeeRepository
         return $employees;
     }
 
-    public function getById()
+    public function getById($id)
     {
+        $query = "SELECT *  FROM employee WHERE id=$id";
+        $result = mysqli_query($this->conn, $query);
+        $employees = array();
+        if (mysqli_num_rows($result) > 0)
+            while ($row = mysqli_fetch_assoc($result)) {
+                array_push($employees, new Employee($row['id'], $row['name']));
+            }
+
+        mysqli_close($this->conn);
+        return $employees;
     }
+
     public function save(Employee $e)
     {
     }

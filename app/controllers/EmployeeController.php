@@ -14,6 +14,10 @@ class EmployeeController
     public function getAll()
     {
     }
+    public function getById($id)
+    {
+        return json_encode($this->employeeRepository->getById($id));
+    }
     public function getAllById()
     {
     }
